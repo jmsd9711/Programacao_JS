@@ -3,8 +3,12 @@ function naoUrgente(){
     novaNota=document.createElement("li")
     novaNota.id="listaN"
     novaNota.innerText=nota=document.getElementById("nota").value
-  var div=document.getElementById("nUrgente")
-    div.appendChild(novaNota)
+    if(nota==""){
+        alert("Digite uma nota antes de adicionar")
+        return
+    }
+  var ul=document.getElementById("nurg_list")
+    ul.appendChild(novaNota)
 }
 
 function Urgente(){
@@ -12,8 +16,12 @@ function Urgente(){
     novaNota=document.createElement("li")
     novaNota.id="listaUrgente"
     novaNota.innerText=nota=document.getElementById("nota").value
-    var div=document.getElementById("Urgente")
-    div.appendChild(novaNota)
+    if(nota==""){
+        alert("Digite uma nota antes de adicionar")
+        return
+    }
+    var ul=document.getElementById("urg_list")
+    ul.appendChild(novaNota)
 }
 
 function removerN(){
@@ -35,11 +43,27 @@ function removerUrgente(){
 }
 
 function apagarN(){
-    var li=document.getElementById("nUrgente")
-    li.innerHTML=""
+    var ul = document.getElementById("nurg_list")
+    if(ul){
+        if(ul.innerHTML == ""){
+            alert("Não há texto para remover")    
+        }else{
+            ul.innerHTML = ""
+        }
+    }else{
+        alert("Não há texto para remover")    
+    }
 }
 
 function apagarUrgente(){
-    var li=document.getElementById("Urgente")
-    li.innerHTML=""
+    var ul = document.getElementById("urg_list")
+    if(ul){
+        if(ul.innerHTML == ""){
+            alert("Não há texto para remover")    
+        }else{
+            ul.innerHTML = ""
+        }
+    }else{
+        alert("Não há texto para remover")    
+    }
 }
